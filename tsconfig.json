@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "sourceMap": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "noEmitHelpers": true,
+        "noEmitOnError": true
+    },
+    "exclude": [
+        "node_modules",
+        "platforms"
+    ],
+    "filesGlob": [
+        "./d.ts/references.d.ts",
+        "./d.ts/ios.d.ts",
+        "./d.ts/android17.d.ts",
+        "./d.ts/GoogleMaps.d.ts",
+        "./**/*.ts"
+    ]
+}

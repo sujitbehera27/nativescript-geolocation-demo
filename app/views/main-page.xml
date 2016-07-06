@@ -1,0 +1,17 @@
+<Page loaded="pageLoaded">
+    <GridLayout rows="auto, *, auto">
+        <WrapLayout row="0" orientation="horizontal" >
+            <Button text="enable Location" tap="enableLocationTap"/>
+            <Button text="get current location" tap="buttonGetLocationTap"/>
+            <Button text="start monitoring" tap="buttonStartTap"/>
+            <Button text="stop monitoring" tap="buttonStopTap"/>
+            <Button text="Show on Google Map" tap="showOnMap"/>
+        </WrapLayout>
+        <ListView row="1" items="{{ locations }}">
+            <ListView.itemTemplate>
+                <Label text="{{ $value, latitude + ', ' + longitude + ', ' + altitude }}" />
+            </ListView.itemTemplate>
+        </ListView>
+        <Label row="2" text="{{ status }}"/>
+    </GridLayout>
+</Page>
