@@ -1,3 +1,7 @@
-node_modules/
-platforms/
-lib/
+hooks
+node_modules
+platforms
+lib
+
+demo/**/*.js
+demo/**/*.map
