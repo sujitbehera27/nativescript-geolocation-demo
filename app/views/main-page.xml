@@ -1,11 +1,12 @@
 <Page loaded="pageLoaded">
     <GridLayout rows="auto, *, auto">
         <WrapLayout row="0" orientation="horizontal" >
-            <Button text="enable Location" tap="enableLocationTap"/>
-            <Button text="get current location" tap="buttonGetLocationTap"/>
-            <Button text="start monitoring" tap="buttonStartTap"/>
-            <Button text="stop monitoring" tap="buttonStopTap"/>
+            <Button text="Enable Location" tap="enableLocationTap"/>
+            <Button text="Get Current Location" tap="buttonGetLocationTap"/>
+            <Button text="Start Monitoring" tap="buttonStartTap"/>
+            <Button text="Stop Monitoring" tap="buttonStopTap"/>
             <Button text="Show on Google Map" tap="showOnMap"/>
+            <Button text="Clear" tap="buttonClearTap"/>
         </WrapLayout>
         <ListView row="1" items="{{ locations }}">
             <ListView.itemTemplate>

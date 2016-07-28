@@ -1,6 +1,7 @@
 import * as geolocation from "nativescript-geolocation";
 import * as fs from "file-system";
 import * as frame from "ui/frame";
+import {Accuracy} from "ui/enums";
 import {Observable, EventData} from "data/observable";
 import {ObservableArray} from "data/observable-array";
 import {Page} from "ui/page";
@@ -51,7 +52,7 @@ export function enableLocationTap(args: EventData) {
 }
 
 export function buttonGetLocationTap(args: EventData) {
-    var location = geolocation.getCurrentLocation({ desiredAccuracy: 3, updateDistance: 10, maximumAge: 20000, timeout: 20000 }).
+    var location = geolocation.getCurrentLocation({ desiredAccuracy: Accuracy.high, updateDistance: 0.1, maximumAge: 100, timeout: 20000 }).
         then(function (loc) {
             if (loc) {
                 model.locations.push(loc);
@@ -73,7 +74,7 @@ export function buttonStartTap(agrs: EventData) {
         function (e) {
             console.log("Error: " + e.message);
         },
-        { desiredAccuracy: 3, updateDistance: 10, minimumUpdateTime: 1000 * 20 }); // should update every 20 sec according to google documentation this is not so sure.
+        { desiredAccuracy: Accuracy.high, updateDistance: 0.1, minimumUpdateTime: 100 });
 }
 
 export function buttonStopTap(agrs: EventData) {
@@ -89,4 +90,8 @@ export function showOnMap(args: EventData) {
         moduleName: "views/mapPage",
         context: mapPageModel
     });
+}
+
+export function buttonClearTap(agrs: EventData) {
+    model.locations.splice(0, model.locations.length);
 }

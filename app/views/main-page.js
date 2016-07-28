@@ -1,6 +1,7 @@
 "use strict";
 var geolocation = require("nativescript-geolocation");
 var frame = require("ui/frame");
+var enums_1 = require("ui/enums");
 var observable_1 = require("data/observable");
 var observable_array_1 = require("data/observable-array");
 var ViewModel = (function (_super) {
@@ -54,7 +55,7 @@ function enableLocationTap(args) {
 }
 exports.enableLocationTap = enableLocationTap;
 function buttonGetLocationTap(args) {
-    var location = geolocation.getCurrentLocation({ desiredAccuracy: 3, updateDistance: 10, maximumAge: 20000, timeout: 20000 }).
+    var location = geolocation.getCurrentLocation({ desiredAccuracy: enums_1.Accuracy.high, updateDistance: 0.1, maximumAge: 100, timeout: 20000 }).
         then(function (loc) {
         if (loc) {
             model.locations.push(loc);
@@ -72,7 +73,7 @@ function buttonStartTap(agrs) {
         }
     }, function (e) {
         console.log("Error: " + e.message);
-    }, { desiredAccuracy: 3, updateDistance: 10, minimumUpdateTime: 1000 * 20 }); // should update every 20 sec according to google documentation this is not so sure.
+    }, { desiredAccuracy: enums_1.Accuracy.high, updateDistance: 0.1, minimumUpdateTime: 100 });
 }
 exports.buttonStartTap = buttonStartTap;
 function buttonStopTap(agrs) {
@@ -90,4 +91,8 @@ function showOnMap(args) {
     });
 }
 exports.showOnMap = showOnMap;
+function buttonClearTap(agrs) {
+    model.locations.splice(0, model.locations.length);
+}
+exports.buttonClearTap = buttonClearTap;
 //# sourceMappingURL=main-page.js.map
