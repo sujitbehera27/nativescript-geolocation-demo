@@ -52,7 +52,7 @@ export function enableLocationTap(args: EventData) {
 }
 
 export function buttonGetLocationTap(args: EventData) {
-    var location = geolocation.getCurrentLocation({ desiredAccuracy: Accuracy.high, updateDistance: 0.1, maximumAge: 100, timeout: 20000 }).
+    var location = geolocation.getCurrentLocation({ desiredAccuracy: Accuracy.high, updateDistance: 0.1, maximumAge: 5000, timeout: 20000 }).
         then(function (loc) {
             if (loc) {
                 model.locations.push(loc);
