@@ -5,16 +5,21 @@
   "repository": "<fill-your-repository-here>",
   "nativescript": {
     "id": "org.nativescript.nativescriptgeolocationdemo",
-    "tns-android": {
+    "tns-ios": {
       "version": "2.5.0"
     },
-    "tns-ios": {
+    "tns-android": {
       "version": "2.5.0"
     }
   },
   "dependencies": {
+<<<<<<< HEAD
     "nativescript-geolocation": "*",
     "nativescript-googlemaps": "*",
+=======
+    "nativescript-geolocation": "file:///Users/bozhikov/Documents/Work/nativescript-geolocation/dist/nativescript-geolocation-3.0.0.tgz",
+    "nativescript-googlemaps": "file:///Users/bozhikov/Documents/Work/nativescript-googlemaps/dist/nativescript-googlemaps-3.0.0.tgz",
+>>>>>>> fix package son
     "tns-core-modules": "^3.0.0 || ^3.0.0-rc.1",
     "tns-platform-declarations": "^3.0.0 || ^3.0.0-rc.1"
   },
