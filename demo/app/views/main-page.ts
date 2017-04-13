@@ -1,10 +1,10 @@
 import * as geolocation from "nativescript-geolocation";
 import * as fs from "file-system";
 import * as frame from "ui/frame";
-import {Accuracy} from "ui/enums";
-import {Observable, EventData, fromObject as observableFromObject} from "data/observable";
-import {ObservableArray} from "data/observable-array";
-import {Page} from "ui/page";
+import { Accuracy } from "ui/enums";
+import { Observable, EventData, fromObject as observableFromObject } from "data/observable";
+import { ObservableArray } from "data/observable-array";
+import { Page } from "ui/page";
 
 export class ViewModel extends Observable {
     private _status: string;
@@ -42,7 +42,7 @@ var model = new ViewModel();
 
 export function pageLoaded(args: EventData) {
     page = <Page>args.object;
-	page.bindingContext = model;
+    page.bindingContext = model;
 }
 
 export function enableLocationTap(args: EventData) {
