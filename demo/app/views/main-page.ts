@@ -1,6 +1,5 @@
 import * as geolocation from "nativescript-geolocation";
-import * as fs from "file-system";
-import * as frame from "ui/frame";
+import { topmost } from "ui/frame";
 import { Accuracy } from "ui/enums";
 import { Observable, EventData, fromObject as observableFromObject } from "data/observable";
 import { ObservableArray } from "data/observable-array";
@@ -84,9 +83,8 @@ export function buttonStopTap(agrs: EventData) {
 }
 
 export function showOnMap(args: EventData) {
-    var topmost = frame.topmost();
     var mapPageModel = observableFromObject({location: model.locations.getItem(model.locations.length - 1)});
-    topmost.navigate({
+    topmost().navigate({
         moduleName: "views/mapPage",
         context: mapPageModel
     });
