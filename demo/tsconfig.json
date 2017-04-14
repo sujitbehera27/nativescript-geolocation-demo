@@ -7,7 +7,7 @@
         "noEmitHelpers": true,
         "noEmitOnError": true,
         "lib": [
-            "es2016",
+            "es6",
             "dom"
         ],
         "baseUrl": ".",
@@ -21,12 +21,5 @@
     "exclude": [
         "node_modules",
         "platforms"
-    ],
-    "filesGlob": [
-        "./d.ts/references.d.ts",
-        "./d.ts/ios.d.ts",
-        "./d.ts/android17.d.ts",
-        "./d.ts/GoogleMaps.d.ts",
-        "./**/*.ts"
     ]
 }
