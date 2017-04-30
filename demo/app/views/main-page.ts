@@ -1,10 +1,9 @@
 import * as geolocation from "nativescript-geolocation";
-import * as fs from "file-system";
-import * as frame from "ui/frame";
-import {Accuracy} from "ui/enums";
-import {Observable, EventData} from "data/observable";
-import {ObservableArray} from "data/observable-array";
-import {Page} from "ui/page";
+import { topmost } from "ui/frame";
+import { Accuracy } from "ui/enums";
+import { Observable, EventData, fromObject as observableFromObject } from "data/observable";
+import { ObservableArray } from "data/observable-array";
+import { Page } from "ui/page";
 
 export class ViewModel extends Observable {
     private _status: string;
@@ -42,7 +41,7 @@ var model = new ViewModel();
 
 export function pageLoaded(args: EventData) {
     page = <Page>args.object;
-	page.bindingContext = model;
+    page.bindingContext = model;
 }
 
 export function enableLocationTap(args: EventData) {
@@ -84,9 +83,8 @@ export function buttonStopTap(agrs: EventData) {
 }
 
 export function showOnMap(args: EventData) {
-    var topmost = frame.topmost();
-    var mapPageModel = new Observable({location: model.locations.getItem(model.locations.length - 1)});
-    topmost.navigate({
+    var mapPageModel = observableFromObject({location: model.locations.getItem(model.locations.length - 1)});
+    topmost().navigate({
         moduleName: "views/mapPage",
         context: mapPageModel
     });
