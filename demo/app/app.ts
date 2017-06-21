@@ -1,4 +1,6 @@
-﻿import application = require("application");
+﻿require("./bundle-config");
+
+import application = require("application");
 import platform = require("platform");
 
 application.on(application.launchEvent, function (args) {

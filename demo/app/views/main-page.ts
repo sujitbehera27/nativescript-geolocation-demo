@@ -85,7 +85,7 @@ export function buttonStopTap(agrs: EventData) {
 export function showOnMap(args: EventData) {
     var mapPageModel = observableFromObject({location: model.locations.getItem(model.locations.length - 1)});
     topmost().navigate({
-        moduleName: "views/mapPage",
+        moduleName: "views/map-page",
         context: mapPageModel
     });
 }
