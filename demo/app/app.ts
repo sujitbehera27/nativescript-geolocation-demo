@@ -1,13 +1,14 @@
 ﻿require("./bundle-config");
 
-import application = require("application");
-import platform = require("platform");
+import { topmost } from "ui/frame";
+import * as application from "application";
+import { device, platformNames } from "platform";
 
 application.on(application.launchEvent, function (args) {
-    if (platform.device.os === platform.platformNames.ios) {
+    if (device.os === platformNames.ios) {
         GMSServices.provideAPIKey("AIzaSyDQZOuoz1x-bMki_pbb7AYyU9D8Js4ZpKQ");
     }
 });
 
-application.setCssFileName("./app.css");
+// application.setCssFileName("./app.css");
 application.start("views/main-page");
